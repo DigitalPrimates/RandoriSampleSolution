@@ -3,4 +3,4 @@
 	url = git@github.com:DigitalPrimates/Randori.git
 [submodule "RandoriGuiceJS"]
 	path = RandoriGuiceJS
-	url = git@github.com:labriola/RandoriGuiceJS.git
+	url = git@github.com:DigitalPrimates/RandoriGuiceJS.git
