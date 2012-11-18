@@ -1,0 +1,3 @@
+[submodule "Randori"]
+	path = Randori
+	url = git@github.com:DigitalPrimates/Randori.git
