@@ -41,3 +41,5 @@ using System;
     "generated/startup/DemoModule.js",
     "generated/startup/Startup.js"
 }, Minify = false)]
+
+[assembly: JsType(JsMode.Prototype, OmitCasts = true)]

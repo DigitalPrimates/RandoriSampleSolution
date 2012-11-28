@@ -20,6 +20,8 @@
 using SharpKit.JavaScript;
 using guice;
 using guice.binding;
+using randori.startup;
+using randori.styles;
 
 namespace demo.startup {
     [JsType(JsMode.Prototype)]

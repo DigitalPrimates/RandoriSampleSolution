@@ -17,24 +17,16 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
+using SharpKit.Html;
 using SharpKit.JavaScript;
-using SharpKit.jQuery;
-using guice;
-using randori.styles;
+using randori.startup;
 
 namespace demo.startup {
     [JsType(JsMode.Global)]
-    public class Startup : jQueryContext {
+    public class Startup {
         static void Main() {
-            //Create the injector that will be used in the application
-            var guiceJs = new GuiceJs();
-            var injector = guiceJs.createInjector(new DemoModule());
-
-            //Load the style sheets and extract our needed information
-            var styleManager = (StyleBehaviorManager)injector.getInstance(typeof(StyleBehaviorManager));
-            styleManager.parseAndReleaseNodes(J("link"));
-
-            var body = J("body");
+            var randoriApp = new RandoriApplication(HtmlContext.document);
+            randoriApp.launch();
         }
     }
 }
