@@ -17,14 +17,10 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using SharpKit.JavaScript;
 using guice;
 using guice.binding;
-using randori.startup;
-using randori.styles;
 
 namespace demo.startup {
-    [JsType(JsMode.Prototype)]
     public class DemoModule : GuiceModule {
         override public void configure(Binder binder) {
         }
