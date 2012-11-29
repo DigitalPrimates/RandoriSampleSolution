@@ -17,12 +17,25 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using guice;
-using guice.binding;
+using SharpKit.Html;
+using SharpKit.jQuery;
+using randori.attributes;
+using randori.behaviors;
 
-namespace demo.startup {
-    public class DemoModule : GuiceModule {
-        override public void configure(Binder binder) {
+namespace views.mediators {
+    public class IndexMediator : AbstractMediator {
+
+        [View(required=true)]
+        public jQuery welcomeMessage;
+
+        [View(required = false)]
+        public jQuery welcomeMessage2;
+
+        protected override void onRegister() {
+            HtmlContext.alert( "All registered 2 " + welcomeMessage.text() );
+        }
+
+        public IndexMediator(jQuery rootElement) : base( rootElement ) {
         }
     }
 }
