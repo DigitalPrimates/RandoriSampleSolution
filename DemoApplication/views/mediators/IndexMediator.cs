@@ -18,24 +18,36 @@
  */
 
 using SharpKit.Html;
+using SharpKit.JavaScript;
 using SharpKit.jQuery;
 using randori.attributes;
 using randori.behaviors;
+using randori.behaviors.template;
 
 namespace views.mediators {
+
+    [JsType(JsMode.Prototype, NativeJsons=true)]
     public class IndexMediator : AbstractMediator {
 
-        [View(required=true)]
+        [View]
         public jQuery welcomeMessage;
 
         [View(required = false)]
         public jQuery welcomeMessage2;
 
+        [View]
+        public TemplateRenderer template;
+
         protected override void onRegister() {
+
+            template.data = (new { lastName = "Labriola", firstName = "Mike", className = "heavy", contact = new { phone = "8005882300" } }).As<JsObject>();
+
+
             HtmlContext.alert( "All registered 2 " + welcomeMessage.text() );
         }
 
-        public IndexMediator(jQuery rootElement) : base( rootElement ) {
+        public IndexMediator(HtmlElement body)
+            : base(body) {
         }
     }
 }
