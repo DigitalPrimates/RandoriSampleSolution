@@ -19,7 +19,6 @@
 
 using SharpKit.Html;
 using SharpKit.JavaScript;
-using guice;
 using guice.reflection;
 using guice.resolver;
 using randori.attributes;
@@ -28,17 +27,7 @@ using randori.content;
 
 namespace behavior {
     class EchoBehavior : AbstractBehavior  {
-        /*
-        [Inject]
-        public void builder(ContentLoader contentLoader) {
-            HtmlContext.alert("Content Loader injected? " + contentLoader );
-        }
-
-        [Inject]
-        public void builderPlus(ContentLoader contentLoader, ClassResolver resolver) {
-            HtmlContext.alert("Content Loader and ClassResolver injected? " + contentLoader + ' ' + resolver);
-        }*/
-
+        
         protected override void onRegister() {
             decoratedElement.innerText = getName(this.As<JsObject>());
         }
