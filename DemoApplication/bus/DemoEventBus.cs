@@ -20,7 +20,7 @@
 using SharpKit.JavaScript;
 using randori.bus;
 
-namespace demo.bus {
+namespace bus {
     [JsType(JsMode.Prototype, Export = false)]
     public delegate void PartyHere(JsString postalCode, JsArray<JsString> invitees);
 
