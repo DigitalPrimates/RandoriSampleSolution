@@ -17,7 +17,7 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using demo.bus;
+using bus;
 using guice;
 using guice.binding;
 using i18n;

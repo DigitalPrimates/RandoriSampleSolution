@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="behavior\EchoBehavior.cs" />
+    <Compile Include="bus\DemoEventBus.cs" />
     <Compile Include="i18n\StaticTranslator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="startup\DemoContext.cs" />
