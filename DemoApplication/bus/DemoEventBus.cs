@@ -17,20 +17,14 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using demo.bus;
-using guice;
-using guice.binding;
-using i18n;
+using SharpKit.JavaScript;
 using randori.bus;
-using randori.i18n;
 
-namespace startup {
-    public class DemoContext : GuiceModule {
-        override public void configure(Binder binder) {
-            binder.bind(typeof(AbstractTranslator)).to(typeof(StaticTranslator));
+namespace demo.bus {
+    [JsType(JsMode.Prototype, Export = false)]
+    public delegate void PartyHere(JsString postalCode, JsArray<JsString> invitees);
 
-            //Everyone in this context gets this same DemoEventBus
-            binder.bind(typeof(AbstractEventBus)).inScope(Scope.Context).to(typeof(DemoEventBus));
-        }
+    public class DemoEventBus : AbstractEventBus {
+        public PartyHere partyHere;
     }
 }
