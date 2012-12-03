@@ -17,13 +17,9 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using SharpKit.Html;
 using SharpKit.JavaScript;
 using guice.reflection;
-using guice.resolver;
-using randori.attributes;
 using randori.behaviors;
-using randori.content;
 
 namespace behavior {
     class EchoBehavior : AbstractBehavior  {
