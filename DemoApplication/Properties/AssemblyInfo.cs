@@ -37,13 +37,16 @@ using randori.attributes;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: JsExport(CodeInjectionFilename = "bin/sharp_core.js", DefaultFilenameAsCsFilename = true, FilenameFormat = "generated/{0}",GenerateSourceMaps = false)]
 
+[assembly: JsType(JsMode.Prototype, OmitCasts = true, NativeJsons = true)]
+
+//This defines any JS files you want to be merged together and available at startup
 [assembly: JsMergedFile(Filename = "generated/initial_dependencies.js", Sources = new String[]{
     "generated/startup/Startup.js"
 }, Minify = false)]
 
-[assembly: JsType(JsMode.Prototype, OmitCasts = true, NativeJsons = true)]
-
-[assembly: HtmlMergedFile(Filename = "test.html",Sources = new String[] {
+//This defines any HTML files you wish to be merged together and available at Startup.
+//In actuality, it creates a class named HtmlMergedFile where all of these files are available via a JS method
+[assembly: HtmlMergedFile(Filename = "generated/MergedFragments.js", Sources = new String[] {
     "fragment/mergedFragment1.html",
     "fragment/mergedFragment1.html"
 })]
