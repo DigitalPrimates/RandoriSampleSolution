@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using SharpKit.JavaScript;
 using System;
+using randori.attributes;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -43,3 +43,8 @@ using System;
 }, Minify = false)]
 
 [assembly: JsType(JsMode.Prototype, OmitCasts = true)]
+
+[assembly: HtmlMergedFile(Filename = "test.html",Sources = new String[] {
+    "fragment/mergedFragment1.html",
+    "fragment/mergedFragment1.html"
+})]

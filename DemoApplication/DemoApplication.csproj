@@ -63,6 +63,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\demo.css" />
+    <Content Include="fragment\mergedFragment2.html" />
+    <Content Include="fragment\mergedFragment1.html" />
     <Content Include="fragment\fragmentWBehavior.html" />
     <Content Include="fragment\plainHtml.html" />
     <Content Include="index.html" />
