@@ -19,34 +19,34 @@
 
 using SharpKit.Html;
 using SharpKit.JavaScript;
-using SharpKit.jQuery;
+using guice;
+using guice.reflection;
+using guice.resolver;
 using randori.attributes;
 using randori.behaviors;
-using randori.behaviors.template;
+using randori.content;
 
-namespace views.mediators {
+namespace behavior {
+    class EchoBehavior : AbstractBehavior  {
+        /*
+        [Inject]
+        public void builder(ContentLoader contentLoader) {
+            HtmlContext.alert("Content Loader injected? " + contentLoader );
+        }
 
-    [JsType(JsMode.Prototype, NativeJsons=true)]
-    public class IndexMediator : AbstractMediator {
-
-        [View]
-        public jQuery welcomeMessage;
-
-        [View(required = false)]
-        public jQuery welcomeMessage2;
-
-        [View]
-        public TemplateRenderer template;
+        [Inject]
+        public void builderPlus(ContentLoader contentLoader, ClassResolver resolver) {
+            HtmlContext.alert("Content Loader and ClassResolver injected? " + contentLoader + ' ' + resolver);
+        }*/
 
         protected override void onRegister() {
-
-            template.data = (new { lastName = "Labriola", firstName = "Mike", className = "heavy", fragment = "fragment/plainHtml.html", contact = new { phone = "8005882300" } }).As<JsObject>();
-
-
-            //HtmlContext.alert( "All registered 2 " + welcomeMessage.text() );
+            decoratedElement.innerText = getName(this.As<JsObject>());
         }
 
-        public IndexMediator() {
+        protected JsString getName(JsObject instance) {
+            var dependency = new TypeDefinition(instance["constructor"]);
+            return dependency.getClassName();
         }
+
     }
 }
