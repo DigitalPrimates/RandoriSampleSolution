@@ -38,11 +38,10 @@ using randori.attributes;
 [assembly: JsExport(CodeInjectionFilename = "bin/sharp_core.js", DefaultFilenameAsCsFilename = true, FilenameFormat = "generated/{0}",GenerateSourceMaps = false)]
 
 [assembly: JsMergedFile(Filename = "generated/initial_dependencies.js", Sources = new String[]{
-    "generated/startup/DemoContext.js",
     "generated/startup/Startup.js"
 }, Minify = false)]
 
-[assembly: JsType(JsMode.Prototype, OmitCasts = true)]
+[assembly: JsType(JsMode.Prototype, OmitCasts = true, NativeJsons = true)]
 
 [assembly: HtmlMergedFile(Filename = "test.html",Sources = new String[] {
     "fragment/mergedFragment1.html",

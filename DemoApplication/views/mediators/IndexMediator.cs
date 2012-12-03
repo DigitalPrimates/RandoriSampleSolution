@@ -26,7 +26,6 @@ using randori.behaviors.template;
 
 namespace views.mediators {
 
-    [JsType(JsMode.Prototype, NativeJsons=true)]
     public class IndexMediator : AbstractMediator {
 
         [View]

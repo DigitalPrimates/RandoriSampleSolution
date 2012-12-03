@@ -19,10 +19,13 @@
 
 using guice;
 using guice.binding;
+using i18n;
+using randori.i18n;
 
 namespace startup {
     public class DemoContext : GuiceModule {
         override public void configure(Binder binder) {
+            binder.bind(typeof(AbstractTranslator)).to(typeof(StaticTranslator));
         }
     }
 }
