@@ -46,7 +46,7 @@ using randori.attributes;
 
 //This defines any HTML files you wish to be merged together and available at Startup.
 //In actuality, it creates a class named HtmlMergedFile where all of these files are available via a JS method
-[assembly: HtmlMergedFile(Filename = "generated/MergedFragments.js", Sources = new String[] {
+[assembly: HtmlMergedFile(Filename = "generated/merged_fragments.js", Sources = new String[] {
     "fragment/mergedFragment1.html",
     "fragment/mergedFragment1.html"
 })]
