@@ -48,5 +48,5 @@ using randori.attributes;
 //In actuality, it creates a class named HtmlMergedFile where all of these files are available via a JS method
 [assembly: HtmlMergedFile(Filename = "generated/merged_fragments.js", Sources = new String[] {
     "fragment/mergedFragment1.html",
-    "fragment/mergedFragment1.html"
+    "fragment/mergedFragment2.html"
 })]

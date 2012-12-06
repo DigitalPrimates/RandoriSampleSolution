@@ -29,20 +29,25 @@ namespace views.mediators {
     public class IndexMediator : AbstractMediator {
 
         [View]
-        public jQuery welcomeMessage;
-
-        [View(required = false)]
-        public jQuery welcomeMessage2;
+        public jQuery header;
 
         [View]
-        public TemplateRenderer template;
+        public jQuery menu;
+
+        [View]
+        public jQuery loginScreen;
+
+        [View] 
+        public ViewStack viewStack;
 
         protected override void onRegister() {
-
-            template.data = (new { lastName = "Labriola", firstName = "Mike", className = "heavy", fragment = "fragment/plainHtml.html", contact = new { phone = "8005882300" } }).As<JsObject>();
-
-
-            //HtmlContext.alert( "All registered 2 " + welcomeMessage.text() );
+/*
+            if ( template != null ) {
+                template.data = (new { lastName = "Labriola", firstName = "Mike", className = "heavy", fragment = "fragment/plainHtml.html", contact = new { phone = "8005882300" } }).As<JsObject>();
+            }
+*/
+            viewStack.addView("views/view1.html");
+            viewStack.addView("views/view2.html");
         }
 
         public IndexMediator() {
