@@ -64,7 +64,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\css\behaviors.css" />
     <Content Include="assets\css\demo.css" />
     <Content Include="fragment\mergedFragment2.html" />
     <Content Include="fragment\mergedFragment1.html" />

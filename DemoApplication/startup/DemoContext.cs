@@ -30,7 +30,8 @@ namespace startup {
             binder.bind(typeof(AbstractTranslator)).to(typeof(StaticTranslator));
 
             //Everyone in this context gets this same DemoEventBus
-            binder.bind(typeof(AbstractEventBus)).inScope(Scope.Context).to(typeof(DemoEventBus));
+            binder.bind(typeof(AbstractEventBus)).to(typeof(DemoEventBus));
+            binder.bind(typeof(DemoEventBus)).inScope(Scope.Context).to(typeof(DemoEventBus));
         }
     }
 }
