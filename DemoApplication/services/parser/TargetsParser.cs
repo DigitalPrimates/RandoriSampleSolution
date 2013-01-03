@@ -21,15 +21,15 @@ using SharpKit.Html;
 using SharpKit.JavaScript;
 using randori.service.serializer;
 
-namespace demo.services.serializer {
+namespace demo.services.parser {
 
-    public class TargetParser : AbstractParser {
+    public class TargetsParser : AbstractParser<JsArray<TargetData>> {
 
-        protected override object parseResult(object result) {
+        protected override JsArray<TargetData> parseResult(object result) {
             //Here we are just going to parse the result into Json.
             //We are adding some extra data just to show the concept that transforming here is totally allowed and legit
             var strResult = result.As<JsString>();
-            var json = JSON.parse(strResult);
+            dynamic json = JSON.parse(strResult);
 
             return json;
         }

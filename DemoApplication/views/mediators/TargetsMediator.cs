@@ -19,7 +19,6 @@
 
 using System;
 using SharpKit.JavaScript;
-using SharpKit.jQuery;
 using demo.services;
 using randori.attributes;
 using randori.behaviors;
@@ -39,21 +38,12 @@ namespace demo.views.mediators {
         }
 
         protected override void onRegister() {
-            var token = service.get();
-            token.result += targetResults;
-            /*
-            var targetData = new TargetData[] {
-                new TargetData{name = "Jaws", image = "assets/images/jaws.jpg", lastKnownLocation = "Unknown", status = "Unknown"},
-                new TargetData{name = "Dr. Julius No", image = "assets/images/drno.jpg", lastKnownLocation = "Crab Key, Jamaica", status = "Deceased"},
-                new TargetData{name = "Ernst Stavro Blofeld", image = "assets/images/blofeld.jpg", lastKnownLocation = "Baja, California", status = "Presumed Dead"}
-            };
-
-            targetList.data = targetData;
-             */
+            var token1 = service.get();
+            token1.result += targetResults;
         }
 
-        private void targetResults(object result) {
-            targetList.data = result.As<JsArray>();
+        private void targetResults(JsArray<TargetData> result) {
+            targetList.data = result;
         }
     }
 }

@@ -19,7 +19,7 @@
 
 using SharpKit.Html;
 using SharpKit.JavaScript;
-using demo.services.serializer;
+using demo.services.parser;
 using randori.service;
 
 namespace demo.services {
@@ -34,20 +34,20 @@ namespace demo.services {
 
     public class TargetsService : AbstractService {
         readonly ServiceConfig config;
-        readonly TargetParser parser;
+        readonly TargetsParser targets;
 
         public string url { get; set; }
 
-        public AbstractToken get() {
+        public AbstractToken<JsArray<TargetData>> get() {
             var serviceToken = sendRequest( "GET", config.protocol, config.host, config.port, url );
 
-            return parser.createToken(serviceToken);
+            return targets.createToken(serviceToken);
         }
 
-        public TargetsService( XMLHttpRequest xmlHttpRequest, ServiceConfig config, TargetParser parser) 
+        public TargetsService(XMLHttpRequest xmlHttpRequest, ServiceConfig config, TargetsParser targets) 
             : base( xmlHttpRequest ) {
             this.config = config;
-            this.parser = parser;
+            this.targets = targets;
             this.url = "assets/data/targets.txt";
         }
     }
