@@ -22,7 +22,7 @@ using SharpKit.JavaScript;
 using randori.i18n;
 
 /**No, you wouldnt do it this way, we are just demonstrating a point **/
-namespace i18n {
+namespace demo.i18n {
 
     public class StaticTranslator : AbstractTranslator {
 

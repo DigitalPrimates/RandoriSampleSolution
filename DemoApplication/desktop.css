@@ -21,14 +21,8 @@ html {
 }
 
 body {
-    height: 100%;
+	height: 100%;
 	width: 100%;
-	color: #4e4e4e;
-	padding: 0px;
-	background-color: #FFFFFF;
-	margin: 0;
-    -randori-context: startup.DemoContext;
-    -randori-mediator: views.mediators.IndexMediator;
 }
 
 body .mainWrapper {
@@ -59,14 +53,10 @@ body .mainWrapper {
 	left: 208px;
 	bottom: 0;
 	right: 0;
-    -randori-behavior: randori.behaviors.ViewStack;
 }
+/*
+ .mainWrapper .login {
+ position:absolute; top: 60px; left: 0px; bottom: 0; right: 0;
+ }
+ */
 
-.mainWrapper2 .viewStack {
-	position: absolute;
-	top: 60px;
-	left: 408px;
-	bottom: 0;
-	right: 0;
-    -randori-behavior: behavior.EchoBehavior;
-}

@@ -17,40 +17,31 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using demo.behaviors;
+using SharpKit.JavaScript;
+using SharpKit.jQuery;
+using demo.services;
 using randori.attributes;
 using randori.behaviors;
 
 namespace demo.views.mediators {
 
-    public class IndexMediator : AbstractMediator {
+    public class TargetsMediator : AbstractMediator {
 
-        [View(required = true)] 
-        public ViewStack viewStack;
-
-        [View(required = true)]
-        public VerticalTabs menu;
+        [View]
+        public SimpleList targetList;
 
         public override void setViewData(object viewData) {
+            //We can optionally send in data when we select a view... this is where it ends up
         }
 
         protected override void onRegister() {
-
-            var menuItems = new MenuItem[] {
-                new MenuItem {name = "Targets", url = "views/targets.html"},
-                new MenuItem { name = "Labs", url = "views/labs.html" },
-                new MenuItem { name = "Intel", url = "views/intel.html" }
+            var targetData = new TargetData[] {
+                new TargetData{name = "Jaws", image = "assets/images/jaws.jpg", lastKnownLocation = "Unknown", status = "Unknown"},
+                new TargetData{name = "Dr. Julius No", image = "assets/images/drno.jpg", lastKnownLocation = "Crab Key, Jamaica", status = "Deceased"},
+                new TargetData{name = "Ernst Stavro Blofeld", image = "assets/images/blofeld.jpg", lastKnownLocation = "Baja, California", status = "Presumed Dead"}
             };
 
-            menu.menuItemSelected = menuItemSelected;
-            menu.data = menuItems;
-        }
-
-        void menuItemSelected( MenuItem menuData ) {
-            viewStack.addView( menuData.url );
-        }
-
-        public IndexMediator() {
+            targetList.data = targetData;
         }
     }
 }

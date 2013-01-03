@@ -17,21 +17,21 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using demo.bus;
-using guice;
-using guice.binding;
-using demo.i18n;
-using randori.bus;
-using randori.i18n;
+using SharpKit.JavaScript;
+using guice.reflection;
+using randori.behaviors;
 
-namespace demo.startup {
-    public class DemoContext : GuiceModule {
-        override public void configure(Binder binder) {
-            binder.bind(typeof(AbstractTranslator)).to(typeof(StaticTranslator));
-
-            //Everyone in this context gets this same DemoEventBus
-            binder.bind(typeof(AbstractEventBus)).to(typeof(DemoEventBus));
-            binder.bind(typeof(DemoEventBus)).inScope(Scope.Context).to(typeof(DemoEventBus));
+namespace demo.behaviors {
+    class EchoBehavior : AbstractBehavior  {
+        
+        protected override void onRegister() {
+            decoratedElement.innerText = getName(this.As<JsObject>());
         }
+
+        protected JsString getName(JsObject instance) {
+            var dependency = new TypeDefinition(instance["constructor"]);
+            return dependency.getClassName();
+        }
+
     }
 }

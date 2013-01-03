@@ -35,13 +35,16 @@ using randori.attributes;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: JsExport(CodeInjectionFilename = "bin/sharp_core.js", DefaultFilenameAsCsFilename = true, FilenameFormat = "generated/{0}",GenerateSourceMaps = false)]
+[assembly: JsExport(CodeInjectionFilename = "bin/sharp_core.js", 
+                    DefaultFilenameAsCsFilename = true, 
+                    FilenameFormat = "generated/demo/{0}", 
+                    GenerateSourceMaps = false)]
 
 [assembly: JsType(JsMode.Prototype, OmitCasts = true, NativeJsons = true)]
 
 //This defines any JS files you want to be merged together and available at startup
 [assembly: JsMergedFile(Filename = "generated/initial_dependencies.js", Sources = new String[]{
-    "generated/startup/Startup.js"
+    "generated/demo/startup/Startup.js"
 }, Minify = false)]
 
 //This defines any HTML files you wish to be merged together and available at Startup.

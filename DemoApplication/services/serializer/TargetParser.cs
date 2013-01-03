@@ -17,21 +17,21 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
+using SharpKit.Html;
 using SharpKit.JavaScript;
-using guice.reflection;
-using randori.behaviors;
+using randori.service.serializer;
 
-namespace behavior {
-    class EchoBehavior : AbstractBehavior  {
-        
-        protected override void onRegister() {
-            decoratedElement.innerText = getName(this.As<JsObject>());
+namespace demo.services.serializer {
+
+    public class TargetParser : AbstractParser {
+
+        protected override object parseResult(object result) {
+            //Here we are just going to parse the result into Json.
+            //We are adding some extra data just to show the concept that transforming here is totally allowed and legit
+            var strResult = result.As<JsString>();
+            var json = JSON.parse(strResult);
+
+            return json;
         }
-
-        protected JsString getName(JsObject instance) {
-            var dependency = new TypeDefinition(instance["constructor"]);
-            return dependency.getClassName();
-        }
-
     }
 }

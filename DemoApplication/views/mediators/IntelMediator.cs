@@ -16,41 +16,22 @@
  * 
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
-
-using demo.behaviors;
+using SharpKit.jQuery;
 using randori.attributes;
 using randori.behaviors;
 
 namespace demo.views.mediators {
+    public class IntelMediator : AbstractMediator {
 
-    public class IndexMediator : AbstractMediator {
-
-        [View(required = true)] 
-        public ViewStack viewStack;
-
-        [View(required = true)]
-        public VerticalTabs menu;
+        [View]
+        public jQuery message;
 
         public override void setViewData(object viewData) {
+            //We can optionally send in data when we select a view... this is where it ends up
         }
 
         protected override void onRegister() {
-
-            var menuItems = new MenuItem[] {
-                new MenuItem {name = "Targets", url = "views/targets.html"},
-                new MenuItem { name = "Labs", url = "views/labs.html" },
-                new MenuItem { name = "Intel", url = "views/intel.html" }
-            };
-
-            menu.menuItemSelected = menuItemSelected;
-            menu.data = menuItems;
-        }
-
-        void menuItemSelected( MenuItem menuData ) {
-            viewStack.addView( menuData.url );
-        }
-
-        public IndexMediator() {
+            message.text( "Intel Mediator Loaded and Registered" );
         }
     }
 }
