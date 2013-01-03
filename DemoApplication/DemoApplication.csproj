@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="assets\css\behaviors.css" />
     <Content Include="assets\css\hmss.css" />
+    <Content Include="assets\data\targets.txt" />
     <Content Include="assets\images\blofeld.jpg" />
     <Content Include="assets\images\drno.jpg" />
     <Content Include="assets\images\jaws.jpg" />

@@ -27,7 +27,7 @@ namespace demo.behaviors {
     [JsType(JsMode.Prototype, Export = false)]
     public delegate void MenuItemSelected(MenuItem menuData);
 
-    [JsType(JsMode.Prototype, Export = false, Name = "Object")]
+    [JsType(JsMode.Json, Export = false, Name = "Object")]
     public class MenuItem {
         public string name;
         public string url;

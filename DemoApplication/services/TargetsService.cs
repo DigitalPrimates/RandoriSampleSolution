@@ -17,7 +17,6 @@
  * @author Michael Labriola <labriola@digitalprimates.net>
  */
 
-using System;
 using SharpKit.Html;
 using SharpKit.JavaScript;
 using demo.services.serializer;
@@ -25,7 +24,7 @@ using randori.service;
 
 namespace demo.services {
 
-    [JsType(JsMode.Prototype, Export = false, Name = "Object")]
+    [JsType(JsMode.Json, Export = false, Name = "Object")]
     public class TargetData {
         public string name;
         public string image;
@@ -33,24 +32,23 @@ namespace demo.services {
         public string status;
     }
 
-    public class TargetsService {
+    public class TargetsService : AbstractService {
+        readonly ServiceConfig config;
         readonly TargetParser parser;
 
         public string url { get; set; }
 
         public AbstractToken get() {
-            var serviceToken = new ServiceToken();
-            var request = new XMLHttpRequest();
-            request.open("GET", url, true );
-            request.onreadystatechange += serviceToken.onReadyStateChange;
-
-            request.send("");
+            var serviceToken = sendRequest( "GET", config.protocol, config.host, config.port, url );
 
             return parser.createToken(serviceToken);
         }
 
-        public TargetsService( TargetParser parser ) {
+        public TargetsService( XMLHttpRequest xmlHttpRequest, ServiceConfig config, TargetParser parser) 
+            : base( xmlHttpRequest ) {
+            this.config = config;
             this.parser = parser;
+            this.url = "assets/data/targets.txt";
         }
     }
 }

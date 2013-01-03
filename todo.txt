@@ -3,7 +3,7 @@ Guice
 	-Annotations
 	Singleton via parent binders
 
-FeatureManager
+**FeatureManager
 Multi-Binding
 Services
 Behavior Mixin
@@ -16,21 +16,3 @@ Fix
 SharpKit.Html.XMLHttpRequest
 SharpKit.Html.Node
 
-
-randori.attributes.HtmlMergedFile.className = "randori.attributes.HtmlMergedFile";
-randori.attributes.HtmlMergedFile.getCachedFileList = function()
-{
-    var p= [];
-    p.push({n:'views/home.html'});
-    p.push({n:'views/login.html'});
-    p.push({n:'views/messages.html'});
-    return p;
-};
-randori.attributes.HtmlMergedFile.getCachedHtmlForUri = function(fileName)
-{
-    if(htmlMergedFiles[ fileName ] != null)
-    {
-        return htmlMergedFiles[ fileName ];
-    }
-    return;
-};

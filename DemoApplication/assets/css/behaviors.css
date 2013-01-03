@@ -22,3 +22,7 @@
 .targets {
     -randori-mediator: demo.views.mediators.TargetsMediator;   
 }
+
+.simpleList {
+    -randori-mediator: randori.behaviors.SimpleList;   
+}
