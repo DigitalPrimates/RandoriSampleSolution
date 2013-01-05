@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="RandoriTemplate.52b3e076-7c75-4951-ae60-9b3e6f2e7da7">
+    <Name>Randori Template</Name>
+    <Author>Roland Zwaga</Author>
+    <Version>1.0</Version>
+    <Description xml:space="preserve">C# / Web Template for application development using the Randori Enterprise Framework</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>https://github.com/DigitalPrimates/RandoriSampleSolution</MoreInfoUrl>
+    <License>Apache20License.txt</License>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Pro</Edition>
+      </VisualStudio>      
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+  </Identifier>
+  <References>
+    <Reference Id="NuPackToolsVsix.Microsoft.67e54e40-0ae3-42c5-a949-fddf5739e7a5" MinVersion="1.5.20902.9026">
+      <Name>NuGet Package Manager</Name>
+      <MoreInfoUrl>http://docs.nuget.org/</MoreInfoUrl>
+    </Reference>
+  </References>
+  <Content>
+    <CustomExtension Type="Randori.0.8.0.nupkg">Packages\Randori.0.8.0.nupkg</CustomExtension>
+    <CustomExtension Type="RandoriGuice.0.8.0.nupkg">Packages\RandoriGuice.0.8.0.nupkg</CustomExtension>
+    <ProjectTemplate>ProjectTemplates</ProjectTemplate>
+    <ItemTemplate>ItemTemplates</ItemTemplate>
+  </Content>
+</Vsix>
