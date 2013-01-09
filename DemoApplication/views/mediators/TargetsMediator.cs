@@ -38,12 +38,11 @@ namespace demo.views.mediators {
         }
 
         protected override void onRegister() {
-            var token1 = service.get();
-            token1.result += targetResults;
+            service.get().then( handleResult );
         }
 
-        private void targetResults(JsArray<TargetData> result) {
-            targetList.data = result;
+        object handleResult(JsArray<TargetData> result) {
+            return ( targetList.data = result );
         }
     }
 }

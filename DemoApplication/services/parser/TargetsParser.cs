@@ -25,7 +25,7 @@ namespace demo.services.parser {
 
     public class TargetsParser : AbstractParser<JsArray<TargetData>> {
 
-        protected override JsArray<TargetData> parseResult(object result) {
+        public JsArray<TargetData> parseResult(object result) {
             //Here we are just going to parse the result into Json.
             //We are adding some extra data just to show the concept that transforming here is totally allowed and legit
             var strResult = result.As<JsString>();

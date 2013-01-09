@@ -20,6 +20,7 @@
 using SharpKit.Html;
 using SharpKit.JavaScript;
 using demo.services.parser;
+using randori.async;
 using randori.service;
 
 namespace demo.services {
@@ -36,19 +37,20 @@ namespace demo.services {
         readonly ServiceConfig config;
         readonly TargetsParser targets;
 
-        public string url { get; set; }
+        public string path { get; set; }
 
-        public AbstractToken<JsArray<TargetData>> get() {
-            var serviceToken = sendRequest( "GET", config.protocol, config.host, config.port, url );
+        public Promise<JsArray<TargetData>> get() {
+            var promise = sendRequest("GET", config.protocol, config.host, config.port, path);
+            var parserPromise = promise.then<JsArray<TargetData>>( targets.parseResult );
 
-            return targets.createToken(serviceToken);
+            return parserPromise;
         }
 
         public TargetsService(XMLHttpRequest xmlHttpRequest, ServiceConfig config, TargetsParser targets) 
             : base( xmlHttpRequest ) {
             this.config = config;
             this.targets = targets;
-            this.url = "assets/data/targets.txt";
+            this.path = "assets/data/targets.txt";
         }
     }
 }
