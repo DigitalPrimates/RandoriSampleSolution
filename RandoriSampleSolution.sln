@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randori", "Randori\Randori.csproj", "{B5057A8F-1D0D-4A8C-A16E-FD9473888DAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoApplication\DemoApplication.csproj", "{3ED4B0ED-ABD8-4655-AFD9-9C000755A083}"
+Project("{00000000-0000-0000-0000-000000000000}") = "DemoApplication", "DemoApplication\DemoApplication.csproj", "{3ED4B0ED-ABD8-4655-AFD9-9C000755A083}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandoriGuiceJS", "RandoriGuiceJS\RandoriGuiceJS.csproj", "{37704182-0ED6-44E6-B351-69A9BAD717EE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandoriTemplateInstaller", "RandoriTemplateInstaller\RandoriTemplateInstaller.csproj", "{A1EABCC6-0065-40DC-936E-346DA05D77C9}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -52,16 +50,6 @@ Global
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|x86.ActiveCfg = Release|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
