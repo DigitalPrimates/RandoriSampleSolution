@@ -47,7 +47,12 @@ namespace demo.views.mediators {
         }
 
         void menuItemSelected( MenuItem menuData ) {
-            viewStack.addView( menuData.url );
+            viewStack.popView();
+            var promise = viewStack.pushView(menuData.url);
+
+            promise.then( delegate( AbstractMediator result ) {
+                return null;
+            } );
         }
 
         public IndexMediator() {

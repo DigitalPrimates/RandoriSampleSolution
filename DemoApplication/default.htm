@@ -3,20 +3,36 @@
     <head>
         <title>HMSS Portal</title>
 
+        <!-- Useful for debugging. Remove for production -->
         <meta http-equiv="Pragma" content="no-cache"/>
         <meta http-equiv="Expires" content="-1"/>
         <meta http-equiv="Cache-Control" content="no-cache"/>
-
-        <link rel="stylesheet" href="assets/css/hmss.css" type="text/css"/>
+        
+        <!-- Visual Style Sheet -->
+        <link rel="stylesheet" href="assets/css/default.css" type="text/css"/>
+        
+        <!-- Behavior Style Sheet -->
         <link rel="stylesheet/randori" href="assets/css/behaviors.css" type="text/css"/>
+        
+        <!-- JQuery -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+        <!-- Randori Dependencies -->
         <script type="text/javascript" src="generated/randori/RandoriGuiceJS.js"></script>
         <script type="text/javascript" src="generated/randori/Randori.js"></script>
-        <script type="text/javascript" src="generated/initial_dependencies.js"></script>
+        
+        <!-- Initial Dependencies as defined in the AssemblyInfo.cs -->
+        <!--script type="text/javascript" src="generated/initial_dependencies.js"></script-->
+        
+        <!-- Optional Merged HTML Fragments -->
         <!--script type="text/javascript" src="generated/merged_fragments.js"></script-->
 
         <script type="text/javascript">
-            $(Main);
+            //Start the randori framework
+            $(function () {
+                var randoriApp = new randori.startup.RandoriApplication(document);
+                randoriApp.launch();
+            });
         </script>
     </head>
     <body class="hmssApp">

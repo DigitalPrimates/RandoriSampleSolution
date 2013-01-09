@@ -7,11 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApplication", "DemoAppl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandoriGuiceJS", "RandoriGuiceJS\RandoriGuiceJS.csproj", "{37704182-0ED6-44E6-B351-69A9BAD717EE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B29E5E8F-2FA8-422A-BEE6-CF699CD04879}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandoriTemplateInstaller", "RandoriTemplateInstaller\RandoriTemplateInstaller.csproj", "{A1EABCC6-0065-40DC-936E-346DA05D77C9}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -56,6 +52,16 @@ Global
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{37704182-0ED6-44E6-B351-69A9BAD717EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A1EABCC6-0065-40DC-936E-346DA05D77C9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
