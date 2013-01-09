@@ -23,7 +23,7 @@ using randori.service.serializer;
 
 namespace demo.services.parser {
 
-    public class TargetsParser : AbstractParser<JsArray<TargetData>> {
+    public class TargetsParser : AbstractParser {
 
         public JsArray<TargetData> parseResult(object result) {
             //Here we are just going to parse the result into Json.
