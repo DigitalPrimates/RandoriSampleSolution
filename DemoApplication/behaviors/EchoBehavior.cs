@@ -28,6 +28,9 @@ namespace demo.behaviors {
             decoratedElement.innerText = getName(this.As<JsObject>());
         }
 
+        protected override void onDeregister() {
+        }
+
         protected JsString getName(JsObject instance) {
             var dependency = new TypeDefinition(instance["constructor"]);
             return dependency.getClassName();

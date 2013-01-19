@@ -46,6 +46,9 @@ namespace demo.views.mediators {
             menu.data = menuItems;
         }
 
+        protected override void onDeregister() {
+        }
+
         void menuItemSelected( MenuItem menuData ) {
             viewStack.popView();
             var promise = viewStack.pushView(menuData.url);

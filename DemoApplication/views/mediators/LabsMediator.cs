@@ -33,5 +33,8 @@ namespace demo.views.mediators {
         protected override void onRegister() {
             message.text( "Labs Mediator Loaded and Registered" );
         }
+
+        protected override void onDeregister() {
+        }
     }
 }

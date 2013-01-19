@@ -41,6 +41,9 @@ namespace demo.views.mediators {
             service.get().then( handleResult );
         }
 
+        protected override void onDeregister() {
+        }
+
         object handleResult(JsArray<TargetData> result) {
             return ( targetList.data = result );
         }
