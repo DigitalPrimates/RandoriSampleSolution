@@ -41,7 +41,7 @@ namespace demo.services {
 
         public Promise<JsArray<TargetData>> get() {
             var promise = sendRequest("GET", config.protocol, config.host, config.port, path);
-            var parserPromise = promise.then<JsArray<TargetData>>( targets.parseResult );
+            var parserPromise = promise.thenR<JsArray<TargetData>>( targets.parseResult );
 
             return parserPromise;
         }

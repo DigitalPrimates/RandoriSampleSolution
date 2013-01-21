@@ -38,7 +38,7 @@ namespace demo.views.mediators {
         }
 
         protected override void onRegister() {
-            service.get().then( handleResult );
+            service.get().thenR( handleResult );
         }
 
         protected override void onDeregister() {

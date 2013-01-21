@@ -54,7 +54,6 @@ namespace demo.views.mediators {
             var promise = viewStack.pushView(menuData.url);
 
             promise.then( delegate( AbstractMediator result ) {
-                return null;
             } );
         }
 
