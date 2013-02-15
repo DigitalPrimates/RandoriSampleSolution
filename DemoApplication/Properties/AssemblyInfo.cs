@@ -44,7 +44,7 @@ using randori.attributes;
 //                       !!!!! If you change your root namespace, you must update this option !!!!
 //      GenerateSourceMaps - SharpKit can generated Js to Cs sourcemaps. 
 //
-[assembly: JsExport(CodeInjectionFilename = "bin/sharp_core.js", 
+[assembly: JsExport(CodeInjectionFilename = "generated/sharp_core.js", 
                     DefaultFilenameAsCsFilename = true, 
                     FilenameFormat = "generated/demo/{0}", 
                     GenerateSourceMaps = false)]

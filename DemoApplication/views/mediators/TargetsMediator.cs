@@ -38,14 +38,14 @@ namespace demo.views.mediators {
         }
 
         protected override void onRegister() {
-            service.get().thenR( handleResult );
+            service.get().then( handleResult );
         }
 
         protected override void onDeregister() {
         }
 
-        object handleResult(JsArray<TargetData> result) {
-            return ( targetList.data = result );
+        void handleResult(JsArray<TargetData> result) {
+            targetList.data = result;
         }
     }
 }
